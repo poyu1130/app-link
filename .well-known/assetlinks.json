@@ -5,7 +5,8 @@
       "namespace": "android_app",
       "package_name": "com.taiwanmobile.myMojiApp",
       "sha256_cert_fingerprints":
-        ["64:28:2B:21:83:C5:97:12:D3:DB:AF:FE:88:49:2E:94:6D:63:DF:9F:7C:B4:17:2A:E4:DB:21:F0:56:F2:E9:4C"]
+        ["DC:40:DD:58:EE:32:93:B1:CB:E3:7C:D7:41:48:5A:88:F4:D7:D5:DB:F5:98:5B:A4:32:16:ED:C1:EB:5B:73:04",
+          "64:28:2B:21:83:C5:97:12:D3:DB:AF:FE:88:49:2E:94:6D:63:DF:9F:7C:B4:17:2A:E4:DB:21:F0:56:F2:E9:4C"]
     }
   }
 ]
