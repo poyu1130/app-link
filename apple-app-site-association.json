@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "TMPGCK6PC5.com.taiwanmobile.myMojiStage",
+        "paths": [ "/", "/testlink/*" ]
+      }
+    ]
+  }
+}
