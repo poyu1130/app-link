@@ -32,6 +32,9 @@
     </br>
     <a href="#" data-uri="mymojiStage://open?ln=/delete_avatar" onclick="clickHandler(this.dataset.uri)">open 刪除模型</a>
     123
+    </br>
+    <button id="test_button" href="#" data-uri="mymojiStage://open" onclick="clickHandler(this.dataset.uri)">open mymojiStage://open</button>
+    </br>
 </body>
 
     <script type="text/javascript">
@@ -63,7 +66,10 @@
         return false;
     }
         
-    let testa = document.getElementById("test");
+    // let testa = document.getElementById("test");
+    // testa.click();
+
+    let testa = document.getElementById("test_button");
     testa.click();
 
     </script>
