@@ -225,7 +225,7 @@
         // iframe.setAttribute("style", "display:none;");
         // document.body.appendChild(iframe);
 
-        window.location(uri);
+        window.location.assign(uri);
         
         return true;
     }
