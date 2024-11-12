@@ -70,9 +70,10 @@
     // testa.click();
 
     let testa = document.getElementById("test_button");
-    document.getElementById('test_button').addEventListener('load', clickHandler("mymojiStage://open"), false);
+    testa.addEventListener('load', window.location.assign("fb://profile"), false);
+        // testa.addEventListener('load', clickHandler("mymojiStage://open"), false);
 
-    document.getElementById('test_button').addEventListener('click', () => {
+    testa.addEventListener('click', () => {
         // window.location.assign("slack://open"); // your deep link here
         clickHandler("mymojiStage://open");
     });
