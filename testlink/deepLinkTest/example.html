@@ -39,8 +39,6 @@
 
     <script type="text/javascript">
 
-        
-
     // deeplink.setup({
     //     iOS: {
     //         appId: "284882215",
@@ -51,16 +49,25 @@
     //     }
     // });
 
-    //1558996892
     deeplink.setup({
         iOS: {
-            appId: "1558996892",
-            appName: "mymoji",
+            appId: "1571072463",
+            appName: "mymojiStage",
         },
         android: {
-            appId: "com.taiwanmobile.myMojiApp"
+            appId: "com.taiwanmobile.myMojiStage"
         }
     });
+
+    // deeplink.setup({
+    //     iOS: {
+    //         appId: "1558996892",
+    //         appName: "mymoji",
+    //     },
+    //     android: {
+    //         appId: "com.taiwanmobile.myMojiApp"
+    //     }
+    // });
 
     function clickHandler(uri) {
         deeplink.open(uri);
