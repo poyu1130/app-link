@@ -202,7 +202,7 @@
 
         if (isAndroid() && !navigator.userAgent.match(/Firefox/)) {
             var matches = uri.match(/([^:]+):\/\/(.+)$/i);
-            uri = "intent://" + matches[2] + "#Intent;scheme=" + matches[1];
+            // uri = "intent://" + matches[2] + "#Intent;scheme=" + matches[1];
             uri += ";package=" + settings.android.appId + ";end";
         }
 
@@ -216,8 +216,9 @@
         //     iframe.parentNode.removeChild(iframe);
         //     window.location.href = uri;
         // };
-
-        // iframe .src = uri;
+        console.log(uri);
+     
+        iframe .src = uri;
         iframe.setAttribute("style", "display:none;");
         document.body.appendChild(iframe);
         
