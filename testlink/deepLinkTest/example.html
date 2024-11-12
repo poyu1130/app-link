@@ -35,8 +35,7 @@
     </br>
     <button id="test_button" href="#">open mymojiStage://open</button>
     </br>
-    <button id="test_button" href="intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end">open intent href</button>
-    </br>
+    <a id="manual-link" href="#">click here</a>
 </body>
 
     <script type="text/javascript">
@@ -125,11 +124,14 @@
         }, 2000);
     };
 
-    // openApp();
+    openApp();
     // openAppWithWindowOpen();
     // openAppWithIframe();
 
-    window.onload = openApp;
+    // window.onload = openApp;
+
+    // Update the manual link href
+    document.getElementById('manual-link').href = appScheme;
 
     </script>
     
