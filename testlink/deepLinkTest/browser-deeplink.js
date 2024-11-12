@@ -205,7 +205,7 @@
             uri = "intent://" + matches[2] + "#Intent;scheme=" + matches[1];
             uri += ";package=" + settings.android.appId + ";end";
             console.log(uri);
-            alert(uri);
+            // alert(uri);
         }
 
         if (settings.fallback|| settings.fallbackToWeb) {
