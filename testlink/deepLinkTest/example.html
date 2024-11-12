@@ -75,63 +75,47 @@
     // // testa.addEventListener('load', window.location.assign("intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end"), false);
     // // testa.addEventListener('load', clickHandler("mymojiStage://open"), false);
 
-    // testa.addEventListener('click', () => {
-    //     window.location.assign("fb://profile"); // your deep link here
-    //     // clickHandler("mymojiStage://open");
-    //     // window.location.assign("intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end");
-    //     // window.location.href = "intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end";
-    // });
+    testa.addEventListener('click', () => {
+        window.location.assign("fb://profile"); // your deep link here
+        // clickHandler("mymojiStage://open");
+        // window.location.assign("intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end");
+        // window.location.href = "intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end";
+    });
 
-    // testa.click();
+    testa.click();
 
     // if (window.BOQ_loadedInitialJS) {clickHandler("mymojiStage://open");} else {testa.addEventListener('load', clickHandler("mymojiStage://open"), false);}
 
-    const appScheme = 'intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end';
-    const appStoreURL = 'https://apps.apple.com/app/com.taiwanmobile.myMojiStage';
-    const playStoreURL = 'https://play.google.com/store/apps/details?id=com.taiwanmobile.myMojiStage';
+    // const appScheme = 'intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end';
+    // const appStoreURL = 'https://apps.apple.com/app/com.taiwanmobile.myMojiStage';
+    // const playStoreURL = 'https://play.google.com/store/apps/details?id=com.taiwanmobile.myMojiStage';
 
-    const openApp = () => {
-        // Attempt to open the app using window.location.href
-        window.location.href = appScheme;
+    // const openApp = () => {
+    //     // Attempt to open the app using window.location.href
+    //     window.location.href = appScheme;
 
-        // If not successful within 1.5 seconds, redirect to the store
-        setTimeout(() => {
-            window.location.href = storeURL;
-        }, 1500);
-    };
+    //     // If not successful within 1.5 seconds, redirect to the store
+    //     setTimeout(() => {
+    //         window.location.href = storeURL;
+    //     }, 1500);
+    // };
 
-    // Optional: Attempt to open the app using window.open as a fallback
-    const openAppWithWindowOpen = () => {
-        const newWindow = window.open(appScheme, '_self');
-        if (newWindow) {
-            newWindow.close();
-        }
+    // // Optional: Attempt to open the app using window.open as a fallback
+    // const openAppWithWindowOpen = () => {
+    //     const newWindow = window.open(appScheme, '_self');
+    //     if (newWindow) {
+    //         newWindow.close();
+    //     }
 
-        setTimeout(() => {
-            window.location.href = storeURL;
-        }, 1500);
-    };
+    //     setTimeout(() => {
+    //         window.location.href = storeURL;
+    //     }, 1500);
+    // };
 
-    // Optional: Use an invisible iframe as another fallback
-    const openAppWithIframe = () => {
-        const iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.src = appScheme;
-        document.body.appendChild(iframe);
+    // openApp();
+    // // openAppWithWindowOpen();
 
-        setTimeout(() => {
-            window.location.href = storeURL;
-        }, 2000);
-    };
-
-    openApp();
-    // openAppWithWindowOpen();
-    // openAppWithIframe();
-
-    // window.onload = openApp;
-
-    // Update the manual link href
-    document.getElementById('manual-link').href = appScheme;
+    // // window.onload = openApp;
 
     </script>
     
