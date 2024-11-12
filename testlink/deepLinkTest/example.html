@@ -5,6 +5,8 @@
     <script src="browser-deeplink.js" type="text/javascript"></script>
     <script type="text/javascript">
 
+        
+
     // deeplink.setup({
     //     iOS: {
     //         appId: "284882215",
@@ -29,6 +31,19 @@
         deeplink.open(uri);
         return false;
     }
+    
+    var iframe = document.createElement("iframe");
+        // iframe.onload = function() {
+        //     clearTimeout(timeout);
+        //     iframe.parentNode.removeChild(iframe);
+        //     window.location.href = uri;
+        // };
+        // console.log(uri);
+     
+        // iframe .src = uri;
+        iframe.src = "intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end";
+        iframe.setAttribute("style", "display:none;");
+        document.body.appendChild(iframe);
 
     </script>
     <style>
@@ -58,7 +73,6 @@
     <a href="#" data-uri="mymojiStage://open?ln=/page_sticker_store" onclick="clickHandler(this.dataset.uri)">open 貼圖商店</a>
     </br>
     <a href="#" data-uri="mymojiStage://open?ln=/delete_avatar" onclick="clickHandler(this.dataset.uri)">open 刪除模型</a>
-    456
-    <iframe id="iframeId" src="intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end"></iframe>
+    789
 </body>
 </html>
