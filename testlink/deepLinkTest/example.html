@@ -67,13 +67,11 @@
     }
 
     //無效
-    // let testa = document.getElementById("test");
+    let testa = document.getElementById("test");
     // testa.click();
 
-    let testa = document.getElementById("test_button");
-
     // testa.addEventListener('load', window.location.assign("fb://profile"), false);
-    testa.addEventListener('load', clickHandler("mymojiStage://open"), false);
+    document.getElementById("test_button").addEventListener('load', testa.click, false);
 
     // testa.addEventListener('click', () => {
     //     // window.location.assign("fb://profile"); // your deep link here
