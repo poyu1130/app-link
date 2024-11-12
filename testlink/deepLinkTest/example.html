@@ -71,17 +71,17 @@
 
     let testa = document.getElementById("test_button");
 
-    testa.addEventListener('load', window.location.assign("fb://profile"), false);
-    // // testa.addEventListener('load', clickHandler("mymojiStage://open"), false);
+    // testa.addEventListener('load', window.location.assign("fb://profile"), false);
+    // testa.addEventListener('load', clickHandler("mymojiStage://open"), false);
 
-    // testa.addEventListener('click', () => {
-    //     // window.location.assign("fb://profile"); // your deep link here
-    //     // clickHandler("mymojiStage://open");
-    //     // window.location.assign("intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end");
-    //     // window.location.href = "intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end";
-    // });
+    testa.addEventListener('click', () => {
+        // window.location.assign("fb://profile"); // your deep link here
+        clickHandler("fb://profile");
+        // window.location.assign("intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end");
+        // window.location.href = "intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end";
+    });
 
-    // testa.click();
+    testa.click();
 
     // if (window.BOQ_loadedInitialJS) {clickHandler("mymojiStage://open");} else {testa.addEventListener('load', clickHandler("mymojiStage://open"), false);}
 
