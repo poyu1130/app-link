@@ -211,11 +211,11 @@
         }
         
         var iframe = document.createElement("iframe");
-        iframe.onload = function() {
-            clearTimeout(timeout);
-            iframe.parentNode.removeChild(iframe);
-            window.location.href = uri;
-        };
+        // iframe.onload = function() {
+        //     clearTimeout(timeout);
+        //     iframe.parentNode.removeChild(iframe);
+        //     window.location.href = uri;
+        // };
 
         iframe.src = uri;
         iframe.setAttribute("style", "display:none;");
