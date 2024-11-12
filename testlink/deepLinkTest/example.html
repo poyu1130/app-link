@@ -75,8 +75,8 @@
     document.getElementById('test_button').addEventListener('load', testa.click(), false);
 
     document.getElementById('test_button').addEventListener('click', () => {
-        // window.location.assign("slack://open"); // your deep link here
-        clickHandler("fb://profile");
+        window.location.assign("fb://profile"); // your deep link here
+        // clickHandler("fb://profile");
     });
 
     // testa.addEventListener('load', window.location.assign("fb://profile"), false);
