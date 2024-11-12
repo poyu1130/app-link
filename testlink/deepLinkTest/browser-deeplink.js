@@ -217,7 +217,7 @@
         //     window.location.href = uri;
         // };
 
-        iframe.src = uri;
+        // iframe .src = uri;
         iframe.setAttribute("style", "display:none;");
         document.body.appendChild(iframe);
         
