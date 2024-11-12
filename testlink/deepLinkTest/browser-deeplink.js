@@ -192,13 +192,13 @@
      * @return {Boolean} true, if you're on a mobile device and the link was opened
      */
     var open = function(uri) {
-        if (!isMobile()) {
-            return false;
-        }
+        // if (!isMobile()) {
+        //     return false;
+        // }
 
-        if (isAndroid() && settings.androidDisabled) {
-            return;
-        }
+        // if (isAndroid() && settings.androidDisabled) {
+        //     return;
+        // }
 
         if (isAndroid() && !navigator.userAgent.match(/Firefox/)) {
             var matches = uri.match(/([^:]+):\/\/(.+)$/i);
