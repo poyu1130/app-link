@@ -220,12 +220,12 @@
         };
         console.log(uri);
      
-        // iframe .src = uri;
-        // // iframe.src = "intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end";
-        // iframe.setAttribute("style", "display:none;");
-        // document.body.appendChild(iframe);
+        iframe .src = uri;
+        // iframe.src = "intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end";
+        iframe.setAttribute("style", "display:none;");
+        document.body.appendChild(iframe);
 
-        window.location.assign(uri);
+        // window.location.assign(uri);
         
         return true;
     }
