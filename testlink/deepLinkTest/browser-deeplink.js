@@ -213,15 +213,15 @@
         }
         
         var iframe = document.createElement("iframe");
-        // iframe.onload = function() {
-        //     clearTimeout(timeout);
-        //     iframe.parentNode.removeChild(iframe);
-        //     window.location.href = uri;
-        // };
-        // console.log(uri);
+        iframe.onload = function() {
+            clearTimeout(timeout);
+            iframe.parentNode.removeChild(iframe);
+            window.location.href = uri;
+        };
+        console.log(uri);
      
-        // iframe .src = uri;
-        iframe.src = "intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end";
+        iframe .src = uri;
+        // iframe.src = "intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end";
         iframe.setAttribute("style", "display:none;");
         document.body.appendChild(iframe);
         
