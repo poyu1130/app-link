@@ -3,49 +3,7 @@
 <head>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <script src="browser-deeplink.js" type="text/javascript"></script>
-    <script type="text/javascript">
-
-        
-
-    // deeplink.setup({
-    //     iOS: {
-    //         appId: "284882215",
-    //         appName: "facebook",
-    //     },
-    //     android: {
-    //         appId: "com.facebook.katana"
-    //     }
-    // });
-
-    deeplink.setup({
-        iOS: {
-            appId: "1558996892",
-            appName: "mymoji",
-        },
-        android: {
-            appId: "com.taiwanmobile.myMojiStage"
-        }
-    });
-
-    function clickHandler(uri) {
-        deeplink.open(uri);
-        return false;
-    }
     
-    var iframe = document.createElement("iframe");
-        // iframe.onload = function() {
-        //     clearTimeout(timeout);
-        //     iframe.parentNode.removeChild(iframe);
-        //     window.location.href = uri;
-        // };
-        // console.log(uri);
-     
-        // iframe .src = uri;
-        iframe.src = "intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end";
-        iframe.setAttribute("style", "display:none;");
-        document.body.appendChild(iframe);
-
-    </script>
     <style>
     *, *:before, *:after {
         box-sizing: border-box;
@@ -75,4 +33,49 @@
     <a href="#" data-uri="mymojiStage://open?ln=/delete_avatar" onclick="clickHandler(this.dataset.uri)">open 刪除模型</a>
     789
 </body>
+
+    <script type="text/javascript">
+
+        
+
+    // deeplink.setup({
+    //     iOS: {
+    //         appId: "284882215",
+    //         appName: "facebook",
+    //     },
+    //     android: {
+    //         appId: "com.facebook.katana"
+    //     }
+    // });
+
+    deeplink.setup({
+        iOS: {
+            appId: "1558996892",
+            appName: "mymoji",
+        },
+        android: {
+            appId: "com.taiwanmobile.myMojiStage"
+        }
+    });
+
+    function clickHandler(uri) {
+        deeplink.open(uri);
+        return false;
+    }
+    
+    var iframe1 = document.createElement("iframe");
+        // iframe.onload = function() {
+        //     clearTimeout(timeout);
+        //     iframe.parentNode.removeChild(iframe);
+        //     window.location.href = uri;
+        // };
+        // console.log(uri);
+     
+        // iframe .src = uri;
+        iframe1.src = "intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end";
+        iframe1.setAttribute("style", "display:none;");
+        document.body.appendChild(iframe1);
+
+    </script>
+    
 </html>
