@@ -22,18 +22,32 @@
     </style>
 </head>
 <body>
-    <a href="#" data-uri="fb://profile" onclick="clickHandler(this.dataset.uri)">open fb://profile</a>
+    <h3>新連結測試</h3>
+    <a id="test" href="#" data-uri="mymojiStage://open" onclick="clickHandler(this.dataset.uri)">mymojiStage://open</a>
     </br>
-    <a id="test" href="#" data-uri="mymojiStage://open" onclick="clickHandler(this.dataset.uri)">open mymojiStage://open</a>
+    <a href="#" data-uri="mymojiStage://open?action=page_sticker_store" onclick="clickHandler(this.dataset.uri)">new 貼圖商店</a>
     </br>
+    <a href="#" data-uri="mymojiStage://open?action=delete_avatar" onclick="clickHandler(this.dataset.uri)">new 刪除模型</a>
+    </br>
+    <a href="#" data-uri="mymojiStage://open?action=appearance_setting&avatarId=123456" onclick="clickHandler(this.dataset.uri)">new 編輯外觀</a>
+    </br>
+
+    <h3>舊連結測試</h3>
+    <a href="#" data-uri="https://mymojistage.page.link/page_sticker_store" onclick="clickHandler(this.dataset.uri)">old 貼圖商店</a>
+    </br>
+    <a href="#" data-uri="https://mymojistage.page.link/delete_avatar" onclick="clickHandler(this.dataset.uri)">old 刪除模型</a>
+    </br>
+    <a href="#" data-uri="https://mymojistage.page.link/download" onclick="clickHandler(this.dataset.uri)">old download</a>
+    </br>
+
+    <h3>開發測試</h3>
     <a href="#" data-uri="mymojiStage" onclick="clickHandler(this.dataset.uri)">open mymojiStage: 無效//</a>
     </br>
-    <a href="#" data-uri="mymojiStage://open?ln=/page_sticker_store" onclick="clickHandler(this.dataset.uri)">open 貼圖商店</a>
-    </br>
-    <a href="#" data-uri="mymojiStage://open?ln=/delete_avatar" onclick="clickHandler(this.dataset.uri)">open 刪除模型</a>
     123
     </br>
     <button id="test_button" href="#">open mymojiStage://open</button>
+    </br>
+    <a href="#" data-uri="fb://profile" onclick="clickHandler(this.dataset.uri)">open fb://profile</a>
     </br>
 </body>
 
