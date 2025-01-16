@@ -23,25 +23,25 @@
 </head>
 <body>
     <h3>新連結測試</h3>
-    <a id="test" href="#" data-uri="ijomymStage://open" onclick="clickHandler(this.dataset.uri)">ijomymStage://open</a>
+    <a id="test" href="#" data-uri="ijomym://open" onclick="clickHandler(this.dataset.uri)">ijomym://open</a>
     </br>
-    <a href="#" data-uri="ijomymStage://open?action=page_sticker_store&code=testttt&redirect_uri=https%3A%2F%2Fwww.google.com" onclick="clickHandler(this.dataset.uri)">new 貼圖商店</a>
+    <a href="#" data-uri="ijomym://open?action=page_sticker_store&code=testttt&redirect_uri=https%3A%2F%2Fwww.google.com" onclick="clickHandler(this.dataset.uri)">new 貼圖商店</a>
     </br>
-    <a href="#" data-uri="ijomymStage://open?action=delete_avatar&code=testttt&redirect_uri=https%3A%2F%2Fwww.google.com" onclick="clickHandler(this.dataset.uri)">new 刪除模型</a>
+    <a href="#" data-uri="ijomym://open?action=delete_avatar&code=testttt&redirect_uri=https%3A%2F%2Fwww.google.com" onclick="clickHandler(this.dataset.uri)">new 刪除模型</a>
     </br>
-    <a href="#" data-uri="ijomymStage://open?action=campaign_card&code=testttt&redirect_uri=https%3A%2F%2Fwww.google.com" onclick="clickHandler(this.dataset.uri)">new 賀卡</a>
+    <a href="#" data-uri="ijomym://open?action=campaign_card&code=testttt&redirect_uri=https%3A%2F%2Fwww.google.com" onclick="clickHandler(this.dataset.uri)">new 賀卡</a>
     </br>
-    <a href="#" data-uri="ijomymStage://open?action=appearance_setting&avatarId=12378&code=testttt&redirect_uri=https%3A%2F%2Fwww.google.com" onclick="clickHandler(this.dataset.uri)">new 編輯外觀</a>
+    <a href="#" data-uri="ijomym://open?action=appearance_setting&avatarId=12378&code=testttt&redirect_uri=https%3A%2F%2Fwww.google.com" onclick="clickHandler(this.dataset.uri)">new 編輯外觀</a>
     </br>
 
     <h3>舊連結測試</h3>
-    <a href="#" data-uri="https://mymojistage.page.link/store" onclick="clickHandler(this.dataset.uri)">old 貼圖商店</a>
+    <a href="#" data-uri="https://mymojiapp.page.link/store" onclick="clickHandler(this.dataset.uri)">old 貼圖商店</a>
     </br>
-    <a href="#" data-uri="https://mymojistage.page.link/deleteAvatar" onclick="clickHandler(this.dataset.uri)">old 刪除模型</a>
+    <a href="#" data-uri="https://mymojiapp.page.link/deleteAvatar" onclick="clickHandler(this.dataset.uri)">old 刪除模型</a>
     </br>
-    <a href="#" data-uri="https://mymojistage.page.link/campaign_card" onclick="clickHandler(this.dataset.uri)">old 賀卡</a>
+    <a href="#" data-uri="https://mymojiapp.page.link/campaign_card" onclick="clickHandler(this.dataset.uri)">old 賀卡</a>
     </br>
-    <a href="#" data-uri="https://mymojistage.page.link/download" onclick="clickHandler(this.dataset.uri)">old download</a>
+    <a href="#" data-uri="https://mymojiapp.page.link/download" onclick="clickHandler(this.dataset.uri)">old download</a>
     </br>
 
     <h3>開發測試</h3>
@@ -67,25 +67,25 @@
     //     }
     // });
 
-    deeplink.setup({
-        iOS: {
-            appId: "1571072463",
-            appName: "mymojiStage",
-        },
-        android: {
-            appId: "com.taiwanmobile.myMojiStage"
-        }
-    });
-
     // deeplink.setup({
     //     iOS: {
-    //         appId: "1558996892",
-    //         appName: "mymoji",
+    //         appId: "1571072463",
+    //         appName: "mymojiStage",
     //     },
     //     android: {
-    //         appId: "com.taiwanmobile.myMojiApp"
+    //         appId: "com.taiwanmobile.myMojiStage"
     //     }
     // });
+
+    deeplink.setup({
+        iOS: {
+            appId: "1558996892",
+            appName: "mymoji",
+        },
+        android: {
+            appId: "com.taiwanmobile.myMojiApp"
+        }
+    });
 
     function clickHandler(uri) {
         deeplink.open(uri);
