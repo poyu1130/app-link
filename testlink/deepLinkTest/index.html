@@ -8,17 +8,18 @@
     *, *:before, *:after {
         box-sizing: border-box;
     }
-    a {
+     a {
         font-family: monospace;
         display: block;
         width: 100%;
         margin: 10px 0;
-        padding: 25px;
-        background: #060;
+        padding: 12px;
+        background: rgb(205, 97, 8);
         color:#fff;
         text-align: center;
-        font-size: 20px;
+        font-size: 18px;
     }
+    input { font-size: 20px;}
     </style>
 </head>
 <body>
@@ -31,7 +32,8 @@
     </br>
     <a href="#" data-uri="ijomym://open?action=campaign_card&code=testttt&redirect_uri=https%3A%2F%2Fwww.google.com" onclick="clickHandler(this.dataset.uri)">new 賀卡</a>
     </br>
-    <a href="#" data-uri="ijomym://open?action=appearance_setting&avatarId=12378&code=testttt&redirect_uri=https%3A%2F%2Fwww.google.com" onclick="clickHandler(this.dataset.uri)">new 編輯外觀</a>
+    <input id="avatarInput" type="text" placeholder="輸入 avatarId" />
+    <a href="#" data-uri="ijomym://open?action=appearance_setting&avatarId=<avatarId>&code=testttt&redirect_uri=https%3A%2F%2Fwww.google.com" onclick="clickHandler(this.dataset.uri)">new 編輯外觀</a>
     </br>
 
     <h3>舊連結測試</h3>
@@ -88,6 +90,9 @@
     });
 
     function clickHandler(uri) {
+        var avatarId = document.getElementById('avatarInput').value;
+        uri = uri.replace('<avatarId>', encodeURIComponent(avatarId));
+
         deeplink.open(uri);
         return false;
     }
