@@ -131,7 +131,8 @@
         var avatarId = document.getElementById('avatarInput').value;
         uri = uri.replace('<avatarId>', encodeURIComponent(avatarId));
 
-        deeplink.open(uri);
+        // deeplink.open(uri);
+        window.location.href = uri;
         return false;
     }
 
