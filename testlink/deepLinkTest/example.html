@@ -8,7 +8,7 @@
     *, *:before, *:after {
         box-sizing: border-box;
     }
-    a {
+    a,button {
         font-family: monospace;
         display: block;
         width: 100%;
@@ -61,7 +61,6 @@
     </br>
     <button onclick="clickButton(deleteUrlFail)">new 刪除模型 button</button>    
     </br>
-    <input id="avatarInput" type="text" placeholder="輸入 avatarId" />
     <button onclick="clickButton(appearanceUrlFail)">new 編輯外觀 button</button>    
     </br>
 
@@ -134,11 +133,11 @@
 
     function clickHandler(uri) {
         var avatarId = document.getElementById('avatarInput').value;
-        // uri = uri.replace('<avatarId>', encodeURIComponent(avatarId));
+        uri = uri.replace('<avatarId>', encodeURIComponent(avatarId));
         
         // console.log(uri)
         // // deeplink.open(uri);
-        // window.location.href = uri;
+        window.location.href = uri;
         return avatarId;
     }
     
