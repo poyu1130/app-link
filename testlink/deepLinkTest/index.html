@@ -22,9 +22,10 @@
     input { font-size: 20px;}
     </style>
 </head>
+
 <body>
-    <h3>新連結測試</h3>
-    <a id="test" href="#" data-uri="ijomym://open" onclick="clickHandler(this.dataset.uri)">ijomym://open</a>
+    <!-- <h3>新連結測試</h3>
+    <a id="test" href="#" data-uri="ijomym://open" onclick="clickHandler(this.dataset.uri)">測試環境純開啟</a>
     </br>
     <a href="#" data-uri="ijomym://open?action=page_sticker_store&code=testttt&redirect_uri=https%3A%2F%2Fwww.google.com" onclick="clickHandler(this.dataset.uri)">new 貼圖商店</a>
     </br>
@@ -32,11 +33,39 @@
     </br>
     <a href="#" data-uri="ijomym://open?action=campaign_card&code=testttt&redirect_uri=https%3A%2F%2Fwww.google.com" onclick="clickHandler(this.dataset.uri)">new 賀卡</a>
     </br>
-    <input id="avatarInput" type="text" placeholder="輸入 avatarId" />
+    <input id="avatarInput" type="text" placeholder="輸入 avatarId"/>
     <a href="#" data-uri="ijomym://open?action=appearance_setting&avatarId=<avatarId>&code=testttt&redirect_uri=https%3A%2F%2Fwww.google.com" onclick="clickHandler(this.dataset.uri)">new 編輯外觀</a>
+    </br> -->
+
+    <h3>純替代方案</h3>
+    <a href="#" data-uri="https://www.mymoji.com.tw/redirect-link/?action=page_sticker_store"
+        onclick="clickHandler(this.dataset.uri)">new 貼圖商店</a>
+    </br>
+    <a href="#" data-uri="https://www.mymoji.com.tw/redirect-link/?action=delete_avatar"
+        onclick="clickHandler(this.dataset.uri)">new 刪除模型</a>
+    </br>
+    <a href="#" data-uri="https://www.mymoji.com.tw/redirect-link/?action=download"
+        onclick="clickHandler(this.dataset.uri)">new download</a>
     </br>
 
-    <h3>舊連結測試</h3>
+    <h3>Deep Link 同帳號</h3>
+    <button onclick="clickButton(storeUrlSuccess)">new 貼圖商店 button</button>
+    </br>
+    <button onclick="clickButton(deleteUrlSuccess)">new 刪除模型 button</button>
+    </br>
+    <input id="avatarInput" type="text" placeholder="輸入 avatarId" />
+    <button onclick="clickButton(appearanceUrlSuccess)">new 編輯外觀 button</button>
+    </br>
+
+    <h3>Deep Link 不同帳號</h3>
+    <button onclick="clickButton(storeUrlFail)">new 貼圖商店 button</button>
+    </br>
+    <button onclick="clickButton(deleteUrlFail)">new 刪除模型 button</button>
+    </br>
+    <button onclick="clickButton(appearanceUrlFail)">new 編輯外觀 button</button>
+    </br>
+
+    <h3>Firebase舊連結測試</h3>
     <a href="#" data-uri="https://mymojiapp.page.link/store" onclick="clickHandler(this.dataset.uri)">old 貼圖商店</a>
     </br>
     <a href="#" data-uri="https://mymojiapp.page.link/deleteAvatar" onclick="clickHandler(this.dataset.uri)">old 刪除模型</a>
@@ -57,7 +86,21 @@
     </br> -->
 </body>
 
-    <script type="text/javascript">
+<script type="text/javascript">
+
+    const storeUrlSuccess = "https://www.mymoji.com.tw/redirect-link/?action=page_sticker_store&amp;state=webstate&state=appstate&scopes=31&code=pass"
+    const deleteUrlSuccess = "https://www.mymoji.com.tw/redirect-link/?action=delete_avatar&amp;state=webstate&state=appstate&scopes=31&code=pass"
+    const appearanceUrlSuccess = "https://www.mymoji.com.tw/redirect-link/?action=appearance_setting&amp;avatarId=<avatarId>&amp;state=webstate&state=appstate&scopes=31&code=pass"
+    const storeUrlFail = "https://www.mymoji.com.tw/redirect-link/?action=page_sticker_store&amp;state=webstate&state=appstate&scopes=31&code=fail"
+    const deleteUrlFail = "https://www.mymoji.com.tw/redirect-link/?action=delete_avatar&amp;state=webstate&state=appstate&scopes=31&code=fail"
+    const appearanceUrlFail = "https://www.mymoji.com.tw/redirect-link/?action=appearance_setting&amp;avatarId=<avatarId>&amp;state=webstate&state=appstate&scopes=31&code=fail"
+
+    function clickButton(uri) {
+        var avatarId = document.getElementById('avatarInput').value;
+        uri = uri.replace('<avatarId>', avatarId);
+        console.log(uri)
+        window.location.href = uri
+    }
 
     // deeplink.setup({
     //     iOS: {
@@ -93,9 +136,13 @@
         var avatarId = document.getElementById('avatarInput').value;
         uri = uri.replace('<avatarId>', encodeURIComponent(avatarId));
 
-        deeplink.open(uri);
-        return false;
+        // console.log(uri)
+        // // deeplink.open(uri);
+        window.location.href = uri;
+        return avatarId;
     }
+
+
 
     // //自動觸發
     // let testa = document.getElementById("test");
@@ -146,6 +193,6 @@
 
     // // window.onload = openApp;
 
-    </script>
-    
+</script>
+
 </html>
