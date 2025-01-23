@@ -132,7 +132,7 @@
     function clickHandler(uri) {
         var avatarId = document.getElementById('avatarInput').value;
         uri = uri.replace('<avatarId>', encodeURIComponent(avatarId));
-
+        console.log(`uri: ${uri}`);
         // deeplink.open(uri);
         window.location.href = uri;
         return false;
