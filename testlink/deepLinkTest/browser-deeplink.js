@@ -9,9 +9,19 @@
  
 // 當失去焦點的時候執行（離開瀏覽器）
   const onBlur = (timeout) => {
-    console.log("開啟 app!")
+      console.log("開啟 app!")
+      
+if (window.hidden) {
+    alert('頁面目前不可見');
+    // 進行相應的處理
     // 將 timer 清除
     clearTimeout(timeout)
+  } else {
+    alert('頁面目前可見');
+    // 回復或其他動作
+  }
+
+    
   }
   // end
 
@@ -216,11 +226,10 @@
             // alert(uri);
         }
 
-        window.location.href = uri;
+        // window.location.href = uri;
         
         if (settings.fallback|| settings.fallbackToWeb) {
-            // timeout = setTimeout(openFallback(Date.now()), settings.delay);
-            setTimeout(openFallback(Date.now()), settings.delay);
+            timeout = setTimeout(openFallback(Date.now()), settings.delay);
         }
         
         // var iframe = document.createElement("iframe");
@@ -239,8 +248,8 @@
         // window.location.assign(uri);
 
         // console.log(uri);
-        // window.location.href = uri;
-        // window.addEventListener("blur", onBlur(timeout));
+        window.location.href = uri;
+        window.addEventListener("visibilitychange", onBlur(timeout));
         
         return true;
     }
