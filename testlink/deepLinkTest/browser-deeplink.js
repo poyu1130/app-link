@@ -173,11 +173,8 @@
             var link = (settings.fallbackToWeb) ?  getWebLink() : getStoreLink();
             var wait = settings.delay + settings.delta;
             if (typeof link === "string" && (Date.now() - ts) < wait) {
-                
                 window.location.href = link;
-                
             }
-            window.addEventListener("blur", onBlur(timeout));
         }
     }
 
@@ -219,7 +216,7 @@
             // alert(uri);
         }
 
-
+        window.location.href = uri;
         
         if (settings.fallback|| settings.fallbackToWeb) {
             timeout = setTimeout(openFallback(Date.now()), settings.delay);
@@ -241,8 +238,8 @@
         // window.location.assign(uri);
 
         // console.log(uri);
-        window.location.href = uri;
-        // window.addEventListener("blur", onBlur(timeout))
+        // window.location.href = uri;
+        // window.addEventListener("blur", onBlur(timeout));
         
         return true;
     }
