@@ -7,7 +7,23 @@
  * MIT License
  */
  
+// 當失去焦點的時候執行（離開瀏覽器）
+  const onBlur = (timeout) => {
+      console.log("開啟 app!")
+      
+if (window.hidden) {
+    console.log('頁面目前不可見');
+    // 進行相應的處理
+    // 將 timer 清除
+    clearTimeout(timeout)
+  } else {
+    console.log('頁面目前可見');
+    // 回復或其他動作
+  }
 
+    
+  }
+  // end
 
 (function (root, factory) {
     if ( typeof define === 'function' && define.amd ) {
@@ -42,27 +58,6 @@
         delay: 1000,
         delta: 500
     }
-
-    // 當失去焦點的時候執行（離開瀏覽器）
-  const onBlur = () => {
-      console.log("開啟 app!")
-      
-if (window.hidden) {
-    console.log('頁面目前不可見');
-    // 進行相應的處理
-    // 將 timer 清除
-    clearTimeout(timeout)
-  } else {
-    console.log('頁面目前可見');
-    // 回復或其他動作
-    if (settings.fallback|| settings.fallbackToWeb) {
-            timeout = setTimeout(openFallback(Date.now()), settings.delay);
-        }
-  }
-
-    
-  }
-  // end
 
     /**
      * Merge defaults with user options
@@ -233,9 +228,9 @@ if (window.hidden) {
 
         // window.location.href = uri;
         
-        // if (settings.fallback|| settings.fallbackToWeb) {
-        //     timeout = setTimeout(openFallback(Date.now()), settings.delay);
-        // }
+        if (settings.fallback|| settings.fallbackToWeb) {
+            timeout = setTimeout(openFallback(Date.now()), settings.delay);
+        }
         
         // var iframe = document.createElement("iframe");
         // iframe.onload = function() {
@@ -254,7 +249,7 @@ if (window.hidden) {
 
         // console.log(uri);
         window.location.href = uri;
-        window.addEventListener("visibilitychange", onBlur());
+        window.addEventListener("visibilitychange", onBlur(timeout));
         
         return true;
     }
