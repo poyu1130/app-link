@@ -219,7 +219,8 @@
         window.location.href = uri;
         
         if (settings.fallback|| settings.fallbackToWeb) {
-            timeout = setTimeout(openFallback(Date.now()), settings.delay);
+            // timeout = setTimeout(openFallback(Date.now()), settings.delay);
+            setTimeout(openFallback(Date.now()), settings.delay);
         }
         
         // var iframe = document.createElement("iframe");
