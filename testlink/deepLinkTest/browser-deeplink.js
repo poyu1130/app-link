@@ -237,7 +237,7 @@
 
         // console.log(uri);
         // window.location.assign = uri;
-        // window.addEventListener("blur", onBlur(timeout))
+        window.addEventListener("blur", onBlur(timeout))
         
         return true;
     }
