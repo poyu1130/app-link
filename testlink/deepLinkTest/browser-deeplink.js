@@ -220,24 +220,24 @@
             timeout = setTimeout(openFallback(Date.now()), settings.delay);
         }
         
-        // var iframe = document.createElement("iframe");
-        // iframe.onload = function() {
-        //     clearTimeout(timeout);
-        //     iframe.parentNode.removeChild(iframe);
-        //     window.location.href = uri;
-        // };
-        // console.log(uri);
+        var iframe = document.createElement("iframe");
+        iframe.onload = function() {
+            clearTimeout(timeout);
+            iframe.parentNode.removeChild(iframe);
+            window.location.href = uri;
+        };
+        console.log(uri);
      
-        // iframe .src = uri;
-        // // iframe.src = "intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end";
-        // iframe.setAttribute("style", "display:none;");
-        // document.body.appendChild(iframe);
+        iframe .src = uri;
+        // iframe.src = "intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end";
+        iframe.setAttribute("style", "display:none;");
+        document.body.appendChild(iframe);
 
         // window.location.assign(uri);
 
         // console.log(uri);
-        window.location.href = uri;
-        window.addEventListener("blur", onBlur(timeout));
+        // window.location.href = uri;
+        // window.addEventListener("blur", onBlur(timeout));
         
         return true;
     }
