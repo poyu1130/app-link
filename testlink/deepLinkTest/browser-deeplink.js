@@ -228,7 +228,7 @@
         // // window.location.assign(uri);
 
         console.log(uri);
-        window.location.href = uri;
+        // window.location.href = uri;
         
         return true;
     }
