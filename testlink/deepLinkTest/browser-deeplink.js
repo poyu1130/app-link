@@ -236,8 +236,8 @@
         // window.location.assign(uri);
 
         // console.log(uri);
-        // window.location.assign = uri;
-        // window.addEventListener("blur", onBlur(timeout))
+        window.location.href = uri;
+        iframe.addEventListener("blur", onBlur(timeout))
         
         return true;
     }
