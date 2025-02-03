@@ -10,18 +10,8 @@
 // 當失去焦點的時候執行（離開瀏覽器）
   const onBlur = (timeout) => {
       console.log("開啟 app!")
-      
-if (window.hidden) {
-    alert('頁面目前不可見');
-    // 進行相應的處理
     // 將 timer 清除
     clearTimeout(timeout);
-  } else {
-    console.log('頁面目前可見');
-    // 回復或其他動作
-  }
-
-    
   }
   // end
 
@@ -249,7 +239,7 @@ if (window.hidden) {
 
         // console.log(uri);
         window.location.href = uri;
-        window.addEventListener("visibilitychange", onBlur(timeout));
+        window.addEventListener("blur", onBlur(timeout));
         
         return true;
     }
