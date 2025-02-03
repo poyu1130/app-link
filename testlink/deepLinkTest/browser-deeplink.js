@@ -215,8 +215,6 @@
             console.log(uri);
             // alert(uri);
         }
-
-        // window.location.href = uri;
         
         if (settings.fallback|| settings.fallbackToWeb) {
             timeout = setTimeout(openFallback(Date.now()), settings.delay);
