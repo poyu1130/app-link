@@ -229,6 +229,7 @@
 
         console.log(uri);
         // window.location.href = uri;
+        window.location.assign(uri);
         
         return true;
     }
