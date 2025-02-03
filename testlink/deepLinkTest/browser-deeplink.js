@@ -12,12 +12,12 @@
       console.log("開啟 app!")
       
 if (window.hidden) {
-    alert('頁面目前不可見');
+    console.log('頁面目前不可見');
     // 進行相應的處理
     // 將 timer 清除
     clearTimeout(timeout)
   } else {
-    alert('頁面目前可見');
+    console.log('頁面目前可見');
     // 回復或其他動作
   }
 
