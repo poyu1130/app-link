@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <script src="browser-deeplink.js" type="text/javascript"></script>
+    
+    <style>
+    *, *:before, *:after {
+        box-sizing: border-box;
+    }
+    a,button {
+        font-family: monospace;
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        padding: 12px;
+        background: #060;
+        color:#fff;
+        text-align: center;
+        font-size: 18px;
+    }
+    input { font-size: 20px;}
+    </style>
+</head>
+<body>
+    <h3>新連結測試</h3>
+    <a id="test" href="#" data-uri="ijomymStage://open" onclick="clickHandler(this.dataset.uri)">測試環境純開啟</a>
+    </br>
+    <!-- <a href="#" data-uri="ijomymStage://open?action=page_sticker_store&code=testttt&redirect_uri=https%3A%2F%2Fwww.google.com" onclick="clickHandler(this.dataset.uri)">new 貼圖商店</a>
+    </br>
+    <a href="#" data-uri="ijomymStage://open?action=delete_avatar&code=testttt&redirect_uri=https%3A%2F%2Fwww.google.com" onclick="clickHandler(this.dataset.uri)">new 刪除模型</a>
+    </br>
+    <a href="#" data-uri="ijomymStage://open?action=campaign_card&code=testttt&redirect_uri=https%3A%2F%2Fwww.google.com" onclick="clickHandler(this.dataset.uri)">new 賀卡</a>
+    </br>
+    <input id="avatarInput" type="text" placeholder="輸入 avatarId"/>
+    <a href="#" data-uri="ijomymStage://open?action=appearance_setting&avatarId=<avatarId>&code=testttt&redirect_uri=https%3A%2F%2Fwww.google.com" onclick="clickHandler(this.dataset.uri)">new 編輯外觀</a>
+    </br> -->
+
+    <h3>純替代方案</h3>
+    <a href="#" data-uri="https://uat.mymoji.com.tw/redirect-link/?action=page_sticker_store"
+        onclick="clickHandler(this.dataset.uri)">new 貼圖商店</a>
+    </br>
+    <a href="#" data-uri="https://uat.mymoji.com.tw/redirect-link/?action=delete_avatar"
+        onclick="clickHandler(this.dataset.uri)">new 刪除模型</a>
+    </br>
+    <a href="#" data-uri="https://uat.mymoji.com.tw/redirect-link/?action=download"
+        onclick="clickHandler(this.dataset.uri)">new download</a>
+    </br>
+
+    <h3>Deep Link 同帳號</h3>
+    <button onclick="clickButton(storeUrlSuccess)">new 貼圖商店 button</button>    
+    </br>
+    <button onclick="clickButton(deleteUrlSuccess)">new 刪除模型 button</button>    
+    </br>
+    <input id="avatarInput" type="text" placeholder="輸入 avatarId" />
+    <button onclick="clickButton(appearanceUrlSuccess)">new 編輯外觀 button</button>    
+    </br>
+
+    <h3>Deep Link 不同帳號</h3>
+    <button onclick="clickButton(storeUrlFail)">new 貼圖商店 button</button>    
+    </br>
+    <button onclick="clickButton(deleteUrlFail)">new 刪除模型 button</button>    
+    </br>
+    <button onclick="clickButton(appearanceUrlFail)">new 編輯外觀 button</button>    
+    </br>
+
+    <h3>Firebase舊連結測試</h3>
+    <a href="#" data-uri="https://mymojistage.page.link/store" onclick="clickHandler(this.dataset.uri)">old 貼圖商店</a>
+    </br>
+    <a href="#" data-uri="https://mymojistage.page.link/deleteAvatar" onclick="clickHandler(this.dataset.uri)">old 刪除模型</a>
+    </br>
+    <a href="#" data-uri="https://mymojistage.page.link/campaign_card" onclick="clickHandler(this.dataset.uri)">old 賀卡</a>
+    </br>
+    <a href="#" data-uri="https://mymojistage.page.link/download" onclick="clickHandler(this.dataset.uri)">old download</a>
+    </br>
+
+    <h3>開發測試</h3>
+    <a href="#" data-uri="mymojiStage" onclick="clickHandler(this.dataset.uri)">open mymojiStage: 無效//</a>
+    </br>
+    123
+    <!-- </br>
+    <button id="test_button" href="#">open mymojiStage://open</button>
+    </br>
+    <a href="#" data-uri="fb://profile" onclick="clickHandler(this.dataset.uri)">open fb://profile</a>
+    </br> -->
+</body>
+
+    <script type="text/javascript">
+
+    const storeUrlSuccess = "https://uat.mymoji.com.tw/redirect-link/?action=page_sticker_store&amp;state=webstate&state=appstate&scopes=31&code=pass"
+    const deleteUrlSuccess = "https://uat.mymoji.com.tw/redirect-link/?action=delete_avatar&amp;state=webstate&state=appstate&scopes=31&code=pass"
+    const appearanceUrlSuccess = "https://uat.mymoji.com.tw/redirect-link/?action=appearance_setting&amp;avatarId=<avatarId>&amp;state=webstate&state=appstate&scopes=31&code=pass"
+    const storeUrlFail = "https://uat.mymoji.com.tw/redirect-link/?action=page_sticker_store&amp;state=webstate&state=appstate&scopes=31&code=fail"
+    const deleteUrlFail = "https://uat.mymoji.com.tw/redirect-link/?action=delete_avatar&amp;state=webstate&state=appstate&scopes=31&code=fail"
+    const appearanceUrlFail = "https://uat.mymoji.com.tw/redirect-link/?action=appearance_setting&amp;avatarId=<avatarId>&amp;state=webstate&state=appstate&scopes=31&code=fail"
+    
+    function clickButton(uri) {
+      var avatarId = document.getElementById('avatarInput').value;
+      uri = uri.replace('<avatarId>', avatarId);
+      console.log(uri)
+      window.location.href = uri
+    }
+
+    // deeplink.setup({
+    //     iOS: {
+    //         appId: "284882215",
+    //         appName: "facebook",
+    //     },
+    //     android: {
+    //         appId: "com.facebook.katana"
+    //     }
+    // });
+
+    // deeplink.setup({
+    //     iOS: {
+    //         appId: "1571072463",
+    //         appName: "mymojiStage",
+    //     },
+    //     android: {
+    //         appId: "com.taiwanmobile.myMojiStage"
+    //     }
+    // });
+
+    deeplink.setup({
+        iOS: {
+            appId: "1558996892",
+            appName: "mymoji",
+        },
+        android: {
+            appId: "com.taiwanmobile.myMojiApp"
+        }
+    });
+
+    function clickHandler(uri) {
+        var avatarId = document.getElementById('avatarInput').value;
+        uri = uri.replace('<avatarId>', encodeURIComponent(avatarId));
+        
+        console.log(uri)
+        deeplink.open(uri);
+        // window.location.href = uri;
+        return avatarId;
+    }
+    
+
+
+    // //自動觸發
+    // let testa = document.getElementById("test");
+    // testa.click();
+
+    // testa.addEventListener('load', window.location.assign("fb://profile"), false);
+    // document.getElementById("test_button").addEventListener('load', testa.click(), false);
+
+    // testa.addEventListener('click', () => {
+    //     // window.location.assign("fb://profile"); // your deep link here
+    //     // clickHandler("fb://profile");
+    //     window.location.assign("intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end");
+    //     // window.location.href = "intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end";
+    // });
+
+    // testa.click();
+
+    // if (window.BOQ_loadedInitialJS) {clickHandler("mymojiStage://open");} else {testa.addEventListener('load', clickHandler("mymojiStage://open"), false);}
+
+    // const appScheme = 'intent://open?ln=/page_sticker_store#Intent;scheme=mymojiStage;package=com.taiwanmobile.myMojiStage;end';
+    // const appStoreURL = 'https://apps.apple.com/app/com.taiwanmobile.myMojiStage';
+    // const playStoreURL = 'https://play.google.com/store/apps/details?id=com.taiwanmobile.myMojiStage';
+
+    // const openApp = () => {
+    //     // Attempt to open the app using window.location.href
+    //     window.location.href = appScheme;
+
+    //     // If not successful within 1.5 seconds, redirect to the store
+    //     setTimeout(() => {
+    //         window.location.href = storeURL;
+    //     }, 1500);
+    // };
+
+    // // Optional: Attempt to open the app using window.open as a fallback
+    // const openAppWithWindowOpen = () => {
+    //     const newWindow = window.open(appScheme, '_self');
+    //     if (newWindow) {
+    //         newWindow.close();
+    //     }
+
+    //     setTimeout(() => {
+    //         window.location.href = storeURL;
+    //     }, 1500);
+    // };
+
+    // openApp();
+    // // openAppWithWindowOpen();
+
+    // // window.onload = openApp;
+
+    </script>
+    
+</html>
