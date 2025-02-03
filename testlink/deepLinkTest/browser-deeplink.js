@@ -224,7 +224,7 @@
         iframe.onload = function() {
             clearTimeout(timeout);
             iframe.parentNode.removeChild(iframe);
-            // window.location.href = uri;
+            window.location.href = uri;
         };
         console.log(uri);
      
@@ -233,11 +233,11 @@
         iframe.setAttribute("style", "display:none;");
         document.body.appendChild(iframe);
 
-        window.location.assign(uri);
+        // window.location.assign(uri);
 
         // console.log(uri);
         // window.location.assign = uri;
-        window.addEventListener("blur", onBlur(timeout))
+        // window.addEventListener("blur", onBlur(timeout))
         
         return true;
     }
