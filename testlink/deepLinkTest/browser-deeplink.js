@@ -7,6 +7,14 @@
  * MIT License
  */
  
+// 當失去焦點的時候執行（離開瀏覽器）
+  const onBlur = (timeout) => {
+    console.log("開啟 app!")
+    // 將 timer 清除
+    clearTimeout(timeout)
+  }
+  // end
+
 (function (root, factory) {
     if ( typeof define === 'function' && define.amd ) {
         define("deeplink", factory(root));
@@ -66,10 +74,11 @@
      * @returns {String} App store itms-apps:// link 
      */
     var getStoreURLiOS = function() {
-        var baseurl = "itms-apps://itunes.apple.com/app/";
-        var name = settings.iOS.appName;
-        var id = settings.iOS.appId;
-        return (id && name) ? (baseurl + name + "/id" + id + "?mt=8") : null;
+        // var baseurl = "itms-apps://itunes.apple.com/app/";
+        // var name = settings.iOS.appName;
+        // var id = settings.iOS.appId;
+        // return (id && name) ? (baseurl + name + "/id" + id + "?mt=8") : null;
+        return "https://apps.apple.com/us/app/mymoji/id1558996892?mt=8";
     }
 
     /**
@@ -229,6 +238,8 @@
 
         console.log(uri);
         window.location.href = uri;
+
+        window.addEventListener("blur", onBlur(timeout))
         // window.location.assign(uri);
         
         return true;
