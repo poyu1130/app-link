@@ -175,8 +175,9 @@
             if (typeof link === "string" && (Date.now() - ts) < wait) {
                 
                 window.location.href = link;
-                window.addEventListener("blur", onBlur(timeout))
+                
             }
+            window.addEventListener("blur", onBlur(timeout));
         }
     }
 
