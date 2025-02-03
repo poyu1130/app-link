@@ -66,10 +66,11 @@
      * @returns {String} App store itms-apps:// link 
      */
     var getStoreURLiOS = function() {
-        var baseurl = "itms-apps://itunes.apple.com/app/";
-        var name = settings.iOS.appName;
-        var id = settings.iOS.appId; 
-        return (id && name) ? (baseurl + name + "/id" + id + "?mt=8") : null;
+        // var baseurl = "itms-apps://itunes.apple.com/app/";
+        // var name = settings.iOS.appName;
+        // var id = settings.iOS.appId;
+        // return (id && name) ? (baseurl + name + "/id" + id + "?mt=8") : null;
+        return "https://apps.apple.com/us/app/mymoji/id1558996892?mt=8";
     }
 
     /**
