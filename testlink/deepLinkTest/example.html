@@ -37,13 +37,13 @@
     </br> -->
 
     <h3>純替代方案</h3>
-    <a href="#" data-uri="https://uat.mymoji.com.tw/redirect-link/?action=page_sticker_store"
+    <a href="#" data-uri="https://uat.mymoji.com.tw/application/?action=page_sticker_store"
         onclick="clickHandler(this.dataset.uri)">new 貼圖商店</a>
     </br>
-    <a href="#" data-uri="https://uat.mymoji.com.tw/redirect-link/?action=delete_avatar"
+    <a href="#" data-uri="https://uat.mymoji.com.tw/application/?action=delete_avatar"
         onclick="clickHandler(this.dataset.uri)">new 刪除模型</a>
     </br>
-    <a href="#" data-uri="https://uat.mymoji.com.tw/redirect-link/?action=download"
+    <a href="#" data-uri="https://uat.mymoji.com.tw/application/?action=download"
         onclick="clickHandler(this.dataset.uri)">new download</a>
     </br>
 
@@ -88,10 +88,10 @@
     <script type="text/javascript">
 
     const storeUrlSuccess = "https://uat.mymoji.com.tw/redirect-link/?action=page_sticker_store&amp;state=webstate&state=appstate&scopes=31&code=pass"
-    const deleteUrlSuccess = "https://uat.mymoji.com.tw/redirect-link/?action=delete_avatar&amp;state=webstate&state=appstate&scopes=31&code=pass"
+    const deleteUrlSuccess = "https://uat.mymoji.com.tw/application/?redirect_uri=https%3A%2F%2Fuat.mymoji.com.tw%2Fredirect-link%2F%3Faction%3Ddelete_avatar%26amp%3Bstate%3Dwebstate%26state%3Dappstate%26scopes%3D31%26code%3Dpass"
     const appearanceUrlSuccess = "https://uat.mymoji.com.tw/redirect-link/?action=appearance_setting&amp;avatarId=<avatarId>&amp;state=webstate&state=appstate&scopes=31&code=pass"
     const storeUrlFail = "https://uat.mymoji.com.tw/redirect-link/?action=page_sticker_store&amp;state=webstate&state=appstate&scopes=31&code=fail"
-    const deleteUrlFail = "https://uat.mymoji.com.tw/redirect-link/?action=delete_avatar&amp;state=webstate&state=appstate&scopes=31&code=fail"
+    const deleteUrlFail = "https://uat.mymoji.com.tw/application/?redirect_uri=https%3A%2F%2Fuat.mymoji.com.tw%2Fredirect-link%2F%3Faction%3Ddelete_avatar%26amp%3Bstate%3Dwebstate%26state%3Dappstate%26scopes%3D31%26code%3Dfail"
     const appearanceUrlFail = "https://uat.mymoji.com.tw/redirect-link/?action=appearance_setting&amp;avatarId=<avatarId>&amp;state=webstate&state=appstate&scopes=31&code=fail"
     
     function clickButton(uri) {
